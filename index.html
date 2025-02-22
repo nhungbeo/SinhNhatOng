@@ -155,13 +155,24 @@
                 container.className = 'media-container';
 
                 if (type === 'image') {
+                    const picture = document.createElement('picture');
+                    
+                    // WebP source
+                    const webpSource = document.createElement('source');
+                    webpSource.srcset = path.replace('.jpg', '.webp').replace('images/', 'images/optimized/');
+                    webpSource.type = 'image/webp';
+                    picture.appendChild(webpSource);
+                    
+                    // Fallback image
                     const img = document.createElement('img');
                     img.src = path;
                     img.alt = 'Birthday photo';
                     img.loading = 'lazy';
                     img.width = 300;
                     img.height = 225;
-                    container.appendChild(img);
+                    picture.appendChild(img);
+                    
+                    container.appendChild(picture);
                 } else {
                     const video = document.createElement('video');
                     video.controls = true;

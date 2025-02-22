@@ -1,0 +1,16 @@
+{
+  "name": "sinhnhatong",
+  "version": "1.0.0",
+  "main": "optimize-images.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
