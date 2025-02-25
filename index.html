@@ -155,33 +155,15 @@
                 container.className = 'media-container';
 
                 if (type === 'image') {
-                    const picture = document.createElement('picture');
-                    
-                    // WebP source
-                    const webpSource = document.createElement('source');
-                    webpSource.srcset = path.replace('.jpg', '.webp').replace('images/', 'images/optimized/');
-                    webpSource.type = 'image/webp';
-                    picture.appendChild(webpSource);
-                    
-                    // Fallback image
                     const img = document.createElement('img');
                     img.src = path;
                     img.alt = 'Birthday photo';
                     img.loading = 'lazy';
-                    img.width = 300;
-                    img.height = 225;
-                    picture.appendChild(img);
-                    
-                    container.appendChild(picture);
+                    container.appendChild(img);
                 } else {
                     const video = document.createElement('video');
+                    video.src = path;
                     video.controls = true;
-                    video.preload = 'none';
-                    video.poster = 'images/z6342886945001_0710f3dffff7e79962a47aad1f0af111.jpg';
-                    const source = document.createElement('source');
-                    source.src = path;
-                    source.type = 'video/mp4';
-                    video.appendChild(source);
                     container.appendChild(video);
                 }
 
@@ -195,34 +177,41 @@
                 return item;
             }
 
-            // Danh sách ảnh từ thư mục images/
-            const images = [
-                'z6342886945001_0710f3dffff7e79962a47aad1f0af111.jpg',
-                'z6342886945894_e441e10fe86c459d531456341c2a6478.jpg',
-                'z6342886983472_a4ff9ab206397cbed51ba8233c83cf62.jpg',
-                'z6342886984641_1eeb35ba38ca6460766a8082108ee65f.jpg',
-                'z6342886992372_b1d6aacca2bc71d0ff7924ac489aa02a.jpg',
-                'z6342886995327_f57ea718809b192cf91aeff2ddc628a6.jpg',
-                'z6342886998941_fb65bff5ae16249019e3960a263a000b.jpg',
-                'z6342887006195_fb679d90a8cc02404180ade2db274f96.jpg',
-                'z6342887015217_eb2b358fbe4d49a21e1d50b5d15c4a7d.jpg',
-                'z6342887020882_4766697c023ec63958f70973310ecb0b.jpg',
-                'z6342887021198_dceed9734348c6392d8676cef99debfa.jpg'
+            // Lấy danh sách tất cả ảnh .webp từ thư mục images/optimized
+            const optimizedImages = [
+                'z6342886945001_0710f3dffff7e79962a47aad1f0af111.webp',
+                'z6342886945894_e441e10fe86c459d531456341c2a6478.webp',
+                'z6342886983472_a4ff9ab206397cbed51ba8233c83cf62.webp',
+                'z6342886984641_1eeb35ba38ca6460766a8082108ee65f.webp',
+                'z6342886992372_b1d6aacca2bc71d0ff7924ac489aa02a.webp',
+                'z6342886995327_f57ea718809b192cf91aeff2ddc628a6.webp',
+                'z6342886998941_fb65bff5ae16249019e3960a263a000b.webp',
+                'z6342887006195_fb679d90a8cc02404180ade2db274f96.webp',
+                'z6342887015217_eb2b358fbe4d49a21e1d50b5d15c4a7d.webp',
+                'z6342887020882_4766697c023ec63958f70973310ecb0b.webp',
+                'z6342887021198_dceed9734348c6392d8676cef99debfa.webp',
+                'z6352205480497_d5de0686a5cdb6ec6122b6391ecb6d58.webp',
+                'z6352205489091_254f96b3d765ccf95a28615aeec9cc3e.webp',
+                'z6352205494144_228ea7a6fc1816516e709de11f0570b7.webp',
+                'z6352205506028_1749ee941b6b9620355510bb18bd229c.webp',
+                'z6352205506347_360e2a6d8348c8dd91d66f9ec13c8d5b.webp',
+                'z6352205513465_388d54de3941b5cf16e73aea0a5229f8.webp',
+                'z6352205521176_35cb3feb6bcd845abed3a574b6b4c27e.webp',
+                'z6352205533888_d32a4c59cc30f367f8a3d7d3805b53b0.webp',
+                'z6352205534183_4c57502a5426a286773c9404a32d921a.webp'
             ];
 
-            // Danh sách video từ thư mục videos/
-            const videos = [
-                '1740234057578-604555405.mp4'
-            ];
+            // Lấy danh sách video từ thư mục videos
+            const videos = ['6352204804809.mp4'];
 
             const gallery = document.getElementById('gallery');
 
             // Thêm ảnh vào gallery
-            images.forEach(image => {
-                gallery.appendChild(createGalleryItem(`images/${image}`, 'image'));
+            optimizedImages.forEach(image => {
+                gallery.appendChild(createGalleryItem(`images/optimized/${image}`, 'image'));
             });
 
-            // Thêm video vào gallery
+            // Thêm video vào gallery  
             videos.forEach(video => {
                 gallery.appendChild(createGalleryItem(`videos/${video}`, 'video'));
             });
