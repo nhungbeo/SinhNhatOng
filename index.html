@@ -1,244 +1,272 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Album Sinh Nhật Bé 2 Tuổi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="all">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PYW06GR3XK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PYW06GR3XK");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sinh Nhật Bé Ong 2 Tuổi</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      media="all"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #fff9e6;
-        }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #fff9e6;
+      }
 
-        .header {
-            background: #ffd700;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            margin-bottom: 2rem;
-        }
+      .header {
+        background: #ffd700;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        margin-bottom: 2rem;
+      }
 
-        .title {
-            color: #8b4513;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            margin: 10px 0;
-        }
+      .title {
+        color: #8b4513;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        margin: 10px 0;
+      }
 
-        .subtitle {
-            color: #8b4513;
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            margin-bottom: 10px;
-        }
+      .subtitle {
+        color: #8b4513;
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        margin-bottom: 10px;
+      }
 
+      .filter-buttons {
+        background: white;
+        padding: 15px;
+        text-align: center;
+        margin: 20px auto;
+        max-width: 600px;
+        border-radius: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .filter-btn {
+        background: none;
+        border: none;
+        padding: 8px 20px;
+        margin: 0 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .filter-btn.active {
+        background: #ffd700;
+        color: #8b4513;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .gallery-item {
+        position: relative;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        height: 100%;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .media-container {
+        position: relative;
+        aspect-ratio: 4/3;
+        background: #f0f0f0;
+      }
+
+      .media-container img,
+      .media-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .item-caption {
+        padding: 10px;
+        text-align: center;
+        color: #8b4513;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      @media (max-width: 768px) {
         .filter-buttons {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            margin: 20px auto;
-            max-width: 600px;
-            border-radius: 25px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .filter-btn {
-            background: none;
-            border: none;
-            padding: 8px 20px;
-            margin: 0 10px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 1rem;
-            color: #666;
-        }
-
-        .filter-btn.active {
-            background: #ffd700;
-            color: #8b4513;
+          margin: 10px;
+          padding: 10px;
         }
 
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+          padding: 10px;
+          gap: 10px;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         }
 
-        .gallery-item {
-            position: relative;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            height: 100%;
+        .filter-btn {
+          padding: 6px 15px;
+          margin: 0 5px;
+          font-size: 0.9rem;
         }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .media-container {
-            position: relative;
-            aspect-ratio: 4/3;
-            background: #f0f0f0;
-        }
-
-        .media-container img,
-        .media-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .item-caption {
-            padding: 10px;
-            text-align: center;
-            color: #8b4513;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        @media (max-width: 768px) {
-            .filter-buttons {
-                margin: 10px;
-                padding: 10px;
-            }
-            
-            .gallery {
-                padding: 10px;
-                gap: 10px;
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-
-            .filter-btn {
-                padding: 6px 15px;
-                margin: 0 5px;
-                font-size: 0.9rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <h1 class="title">🎂 Chúc Mừng Sinh Nhật Bé Ong 2 Tuổi 🎂</h1>
-        <p class="subtitle">Những khoảnh khắc ngọt ngào như mật ong</p>
+      <h1 class="title">🎂 Chúc Mừng Sinh Nhật Bé Ong 2 Tuổi 🎂</h1>
+      <p class="subtitle">Những khoảnh khắc ngọt ngào như mật ong</p>
     </header>
 
     <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">Tất cả</button>
-        <button class="filter-btn" data-filter="image">Hình ảnh</button>
-        <button class="filter-btn" data-filter="video">Video</button>
+      <button class="filter-btn active" data-filter="all">Tất cả</button>
+      <button class="filter-btn" data-filter="image">Hình ảnh</button>
+      <button class="filter-btn" data-filter="video">Video</button>
     </div>
 
     <div class="gallery" id="gallery">
-        <!-- Gallery items will be inserted here by JavaScript -->
+      <!-- Gallery items will be inserted here by JavaScript -->
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hàm để tạo gallery item
-            function createGalleryItem(path, type) {
-                const item = document.createElement('div');
-                item.className = 'gallery-item';
-                item.setAttribute('data-type', type);
+      document.addEventListener("DOMContentLoaded", function () {
+        // Hàm để tạo gallery item
+        function createGalleryItem(path, type) {
+          const item = document.createElement("div");
+          item.className = "gallery-item";
+          item.setAttribute("data-type", type);
 
-                const container = document.createElement('div');
-                container.className = 'media-container';
+          const container = document.createElement("div");
+          container.className = "media-container";
 
-                if (type === 'image') {
-                    const img = document.createElement('img');
-                    img.src = path;
-                    img.alt = 'Birthday photo';
-                    img.loading = 'lazy';
-                    container.appendChild(img);
-                } else {
-                    const video = document.createElement('video');
-                    video.src = path;
-                    video.controls = true;
-                    container.appendChild(video);
-                }
+          if (type === "image") {
+            const img = document.createElement("img");
+            img.src = path;
+            img.alt = "Birthday photo";
+            img.loading = "lazy";
+            container.appendChild(img);
+          } else {
+            const video = document.createElement("video");
+            video.src = path;
+            video.controls = true;
+            container.appendChild(video);
+          }
 
-                const caption = document.createElement('div');
-                caption.className = 'item-caption';
-                caption.textContent = `Khoảnh khắc đáng yêu ${type === 'image' ? '🎈' : '📹'}`;
+          const caption = document.createElement("div");
+          caption.className = "item-caption";
+          caption.textContent = `Khoảnh khắc đáng yêu ${
+            type === "image" ? "🎈" : "📹"
+          }`;
 
-                item.appendChild(container);
-                item.appendChild(caption);
+          item.appendChild(container);
+          item.appendChild(caption);
 
-                return item;
-            }
+          return item;
+        }
 
-            // Lấy danh sách tất cả ảnh .webp từ thư mục images/optimized
-            const optimizedImages = [
-                'z6342886945001_0710f3dffff7e79962a47aad1f0af111.webp',
-                'z6342886945894_e441e10fe86c459d531456341c2a6478.webp',
-                'z6342886983472_a4ff9ab206397cbed51ba8233c83cf62.webp',
-                'z6342886984641_1eeb35ba38ca6460766a8082108ee65f.webp',
-                'z6342886992372_b1d6aacca2bc71d0ff7924ac489aa02a.webp',
-                'z6342886995327_f57ea718809b192cf91aeff2ddc628a6.webp',
-                'z6342886998941_fb65bff5ae16249019e3960a263a000b.webp',
-                'z6342887006195_fb679d90a8cc02404180ade2db274f96.webp',
-                'z6342887015217_eb2b358fbe4d49a21e1d50b5d15c4a7d.webp',
-                'z6342887020882_4766697c023ec63958f70973310ecb0b.webp',
-                'z6342887021198_dceed9734348c6392d8676cef99debfa.webp',
-                'z6352205480497_d5de0686a5cdb6ec6122b6391ecb6d58.webp',
-                'z6352205489091_254f96b3d765ccf95a28615aeec9cc3e.webp',
-                'z6352205494144_228ea7a6fc1816516e709de11f0570b7.webp',
-                'z6352205506028_1749ee941b6b9620355510bb18bd229c.webp',
-                'z6352205506347_360e2a6d8348c8dd91d66f9ec13c8d5b.webp',
-                'z6352205513465_388d54de3941b5cf16e73aea0a5229f8.webp',
-                'z6352205521176_35cb3feb6bcd845abed3a574b6b4c27e.webp',
-                'z6352205533888_d32a4c59cc30f367f8a3d7d3805b53b0.webp',
-                'z6352205534183_4c57502a5426a286773c9404a32d921a.webp'
-            ];
+        // Lấy danh sách tất cả ảnh .webp từ thư mục images/optimized
+        const optimizedImages = [
+          "z6342886945001_0710f3dffff7e79962a47aad1f0af111.webp",
+          "z6342886945894_e441e10fe86c459d531456341c2a6478.webp",
+          "z6342886983472_a4ff9ab206397cbed51ba8233c83cf62.webp",
+          "z6342886984641_1eeb35ba38ca6460766a8082108ee65f.webp",
+          "z6342886992372_b1d6aacca2bc71d0ff7924ac489aa02a.webp",
+          "z6342886995327_f57ea718809b192cf91aeff2ddc628a6.webp",
+          "z6342886998941_fb65bff5ae16249019e3960a263a000b.webp",
+          "z6342887006195_fb679d90a8cc02404180ade2db274f96.webp",
+          "z6342887015217_eb2b358fbe4d49a21e1d50b5d15c4a7d.webp",
+          "z6342887020882_4766697c023ec63958f70973310ecb0b.webp",
+          "z6342887021198_dceed9734348c6392d8676cef99debfa.webp",
+          "z6352205480497_d5de0686a5cdb6ec6122b6391ecb6d58.webp",
+          "z6352205489091_254f96b3d765ccf95a28615aeec9cc3e.webp",
+          "z6352205494144_228ea7a6fc1816516e709de11f0570b7.webp",
+          "z6352205506028_1749ee941b6b9620355510bb18bd229c.webp",
+          "z6352205506347_360e2a6d8348c8dd91d66f9ec13c8d5b.webp",
+          "z6352205513465_388d54de3941b5cf16e73aea0a5229f8.webp",
+          "z6352205521176_35cb3feb6bcd845abed3a574b6b4c27e.webp",
+          "z6352205533888_d32a4c59cc30f367f8a3d7d3805b53b0.webp",
+          "z6352205534183_4c57502a5426a286773c9404a32d921a.webp",
+        ];
 
-            // Lấy danh sách video từ thư mục videos
-            const videos = ['6352204804809.mp4'];
+        // Lấy danh sách video từ thư mục videos
+        const videos = ["6352204804809.mp4"];
 
-            const gallery = document.getElementById('gallery');
+        const gallery = document.getElementById("gallery");
 
-            // Thêm ảnh vào gallery
-            optimizedImages.forEach(image => {
-                gallery.appendChild(createGalleryItem(`images/optimized/${image}`, 'image'));
-            });
-
-            // Thêm video vào gallery  
-            videos.forEach(video => {
-                gallery.appendChild(createGalleryItem(`videos/${video}`, 'video'));
-            });
-
-            // Filter functionality
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    const filterValue = btn.getAttribute('data-filter');
-                    
-                    requestAnimationFrame(() => {
-                        galleryItems.forEach(item => {
-                            if (filterValue === 'all' || item.getAttribute('data-type') === filterValue) {
-                                item.style.display = 'block';
-                            } else {
-                                item.style.display = 'none';
-                            }
-                        });
-                    });
-                });
-            });
+        // Thêm ảnh vào gallery
+        optimizedImages.forEach((image) => {
+          gallery.appendChild(
+            createGalleryItem(`images/optimized/${image}`, "image")
+          );
         });
+
+        // Thêm video vào gallery
+        videos.forEach((video) => {
+          gallery.appendChild(createGalleryItem(`videos/${video}`, "video"));
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            filterBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filterValue = btn.getAttribute("data-filter");
+
+            requestAnimationFrame(() => {
+              galleryItems.forEach((item) => {
+                if (
+                  filterValue === "all" ||
+                  item.getAttribute("data-type") === filterValue
+                ) {
+                  item.style.display = "block";
+                } else {
+                  item.style.display = "none";
+                }
+              });
+            });
+          });
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
